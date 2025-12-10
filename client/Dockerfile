@@ -13,7 +13,7 @@ RUN npm install
 # Copy the rest of the client code
 COPY . .
 
-RUN mv .env.example .env
+RUN mv .env
 
 # Build the client for production
 RUN npm run build
