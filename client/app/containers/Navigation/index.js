@@ -96,7 +96,7 @@ class Navigation extends React.PureComponent {
               </Row>
               <Row>
                 <Col>
-                  <span className='price'>${suggestion.price}</span>
+                  <span className='price'>₹{suggestion.price}</span>
                 </Col>
               </Row>
             </Container>
@@ -145,16 +145,12 @@ class Navigation extends React.PureComponent {
                 <span>Free Shipping</span>
               </Col>
               <Col md='4' className='text-center d-none d-md-block'>
-                <i className='fa fa-credit-card' />
-                <span>Payment Methods</span>
-              </Col>
-              <Col md='4' className='text-center d-none d-md-block'>
                 <i className='fa fa-phone' />
-                <span>Call us 951-999-9999</span>
+                <span>Call us 999-888-7777</span>
               </Col>
               <Col xs='12' className='text-center d-block d-md-none'>
                 <i className='fa fa-phone' />
-                <span> Need advice? Call us 951-999-9999</span>
+                <span> Need advice? Call us 999-888-7777</span>
               </Col>
             </Row>
           </Container>
@@ -180,7 +176,7 @@ class Navigation extends React.PureComponent {
                   />
                 )}
                 <Link to='/'>
-                  <h1 className='logo'>MERN Store</h1>
+                  <h1 className='logo'>TrendsCart</h1>
                 </Link>
               </div>
             </Col>

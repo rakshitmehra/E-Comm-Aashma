@@ -79,7 +79,7 @@ exports.contactEmail = () => {
 
 exports.merchantApplicationEmail = () => {
   const message = {
-    subject: 'Sell on MERN Store',
+    subject: 'Sell on TrendsCart',
     text: `We received your request! Our team will contact you soon. \n\n`
   };
 
@@ -88,7 +88,7 @@ exports.merchantApplicationEmail = () => {
 
 exports.merchantDeactivateAccount = () => {
   const message = {
-    subject: 'Merchant account on MERN Store',
+    subject: 'Merchant account on TrendsCart',
     text:
       `Your merchant account has been disabled. \n\n` +
       `Please contact admin to request access again.`

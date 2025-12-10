@@ -36,5 +36,10 @@ module.exports = {
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     region: process.env.AWS_REGION,
     bucketName: process.env.AWS_BUCKET_NAME
+  },
+  cloudinary: {
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
   }
 };

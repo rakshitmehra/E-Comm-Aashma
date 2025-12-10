@@ -11,6 +11,7 @@ const auth = require('../../middleware/auth');
 const role = require('../../middleware/role');
 const checkAuth = require('../../utils/auth');
 const { s3Upload } = require('../../utils/storage');
+const { deleteImage } = require('../../utils/storage');
 const {
   getStoreProductsQuery,
   getStoreProductsWishListQuery
@@ -410,14 +411,28 @@ router.delete(
   role.check(ROLES.Admin, ROLES.Merchant),
   async (req, res) => {
     try {
-      const product = await Product.deleteOne({ _id: req.params.id });
+      const product = await Product.findById(req.params.id);
+
+      if (!product) {
+        return res.status(404).json({
+          error: 'No product found.'
+        });
+      }
+
+      // delete from Cloudinary
+      if (product.imageKey) {
+        await deleteImage(product.imageKey);
+      }
+
+      // delete from DB
+      await Product.deleteOne({ _id: req.params.id });
 
       res.status(200).json({
         success: true,
-        message: `Product has been deleted successfully!`,
-        product
+        message: 'Product has been deleted successfully!'
       });
     } catch (error) {
+      console.log(error);
       res.status(400).json({
         error: 'Your request could not be processed. Please try again.'
       });
