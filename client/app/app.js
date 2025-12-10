@@ -35,6 +35,7 @@ const token = localStorage.getItem('token');
 
 if (token) {
   // authenticate api authorization
+  
   setToken(token);
 
   // authenticate routes
